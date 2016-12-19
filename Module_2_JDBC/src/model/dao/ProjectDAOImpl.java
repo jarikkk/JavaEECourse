@@ -2,17 +2,15 @@ package model.dao;
 
 import model.entities.Company;
 import model.entities.Customer;
-import model.entities.Developer;
 import model.entities.Project;
 import utilities.ConnectionUtils;
 
-import java.sql.*;
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by asevruk on 12/9/2016.
- */
 public class ProjectDAOImpl implements ProjectDAO<Project> {
 
 
