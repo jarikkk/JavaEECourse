@@ -15,7 +15,7 @@ public class ProjectController implements GeneralController {
         int id;
         String name;
 
-        ConsoleDataInput.writeMessage("* * * PROJECTS * * *" + "\n" +
+        ConsoleDataInput.writeMessage("----------------------PROJECTS---------------------" + "\n" +
                 "1 - CREATE | 2 - DELETE | 3 - UPDATE | 4 - SHOW ALL PROJECTS | 5 - FIND BY NAME\\n");
 
         controlValue = ConsoleDataInput.readInt();
