@@ -16,39 +16,61 @@ public class SkillDaoImpl implements SkillDao<Skill> {
 
     @Override
     public void create(Skill skill) {
-try(Session session = sessionFactory.openSession()){
-    session.save(skill);
-}
+        try (Session session = sessionFactory.openSession()) {
+            session.save(skill);
+        }
     }
 
     @Override
     public Skill get(int id) {
-        try(Session session = sessionFactory.openSession()){
+        try (Session session = sessionFactory.openSession()) {
             return session.get(Skill.class, id);
         }
     }
 
     @Override
-    public void update(Skill skill) {
-        try(Session session = sessionFactory.openSession()){
-           session.createQuery("UPDATE SKILLS SET skill_name = :skillName").setParameter("skillName", skill.getSkillName());
+    public boolean update(Skill skill) {
+        try (Session session = sessionFactory.openSession()) {
+            try {
+                session.beginTransaction();
+                session.update(skill);
+                session.getTransaction().commit();
+                return true;
+            } catch (Exception e) {
+                session.getTransaction().rollback();
+                throw e;
+            }
+
         }
     }
 
     @Override
-    public void delete(int id) {
-        try(Session session = sessionFactory.openSession()){
-            session.createQuery("DELETE SKILLS WHERE skillId = :skillId").setParameter("skillId", id);
+    public boolean delete(int id) {
+        try (Session session = sessionFactory.openSession()) {
+            try {
+                session.beginTransaction();
+                Skill skill = session.load(Skill.class, id);
+                session.delete(skill);
+                session.getTransaction().commit();
+                return true;
+            } catch (Exception e) {
+                session.getTransaction().rollback();
+                throw e;
+            }
         }
     }
-
     @Override
     public String findByName(String name) {
-        return null;
+
+        try (Session session = sessionFactory.openSession()) {
+            return session.createQuery("from Skill where name = :name").setParameter("name", name).toString();
+        }
     }
 
     @Override
     public List<Skill> getAll() {
-        return null;
+        try(Session session = sessionFactory.openSession()){
+            return session.createQuery("from Skill", Skill.class).list();
+        }
     }
 }

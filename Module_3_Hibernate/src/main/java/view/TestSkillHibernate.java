@@ -14,7 +14,16 @@ public class TestSkillHibernate {
                 .configure("hibernate.cfg.xml");
         try (SessionFactory sessionFactory = configuration.buildSessionFactory()) {
             SkillDaoImpl skillDao = new SkillDaoImpl(sessionFactory);
-            System.out.println("Method get is:" + skillDao.get(1));
+           // System.out.println("Method get is:" + skillDao.get(1));
+//            Skill skill = new Skill();
+//            Skill skill11 = new Skill();
+//            skill.setSkillId(2);
+//            skill.setSkillName("testnamehibernate");
+//            skill11.setSkillName("testnamehibernate2");
+//           skillDao.create(skill11);
+//            skillDao.update(skill);
+            System.out.println(skillDao.getAll());
+            System.out.println(skillDao.findByName("q").toString());
         }
     }
 }
