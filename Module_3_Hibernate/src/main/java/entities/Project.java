@@ -1,29 +1,28 @@
 package entities;
 
+import javax.persistence.*;
 import java.util.Date;
-
+@Entity
+@Table(name = "projects", schema = "public")
 public class Project {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "project_id")
     private int projectId;
+
+    @Column(name = "project_name")
     private String projectName;
+
+    @Column(name = "project_company_id")
     private Company projectCompanyId;
+
+    @Column(name = "project_customer_id")
     private Customer projectCustomerId;
+
+    @Column(name = "project_start_timestamp")
     private Date projectTimeStamp;
 
-    public Project(String projectName, Company projectCompanyId, Customer projectCustomerId, Date projectTimeStamp) {
-        this.projectName = projectName;
-        this.projectCompanyId = projectCompanyId;
-        this.projectCustomerId = projectCustomerId;
-        this.projectTimeStamp = projectTimeStamp;
-    }
-
-    public Project(int projectId, String projectName, Company projectCompanyId, Customer projectCustomerId, Date projectTimeStamp) {
-        this.projectId = projectId;
-        this.projectName = projectName;
-        this.projectCompanyId = projectCompanyId;
-        this.projectCustomerId = projectCustomerId;
-        this.projectTimeStamp = projectTimeStamp;
-    }
 
     public Project(String projectName) {
         this.projectName = projectName;
