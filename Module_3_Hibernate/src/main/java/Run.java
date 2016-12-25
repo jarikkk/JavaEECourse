@@ -1,3 +1,4 @@
+import controller.CompanyController;
 import controller.CustomerController;
 import controller.GeneralController;
 import controller.SkillController;
@@ -15,7 +16,7 @@ public class Run {
         ConsoleDataInput.writeMessage("Welcome to CRUD System-----------------------------------------------");
 
 while (true) {
-    ConsoleDataInput.writeMessage("\\nPlease Choose Entity: 1 - SKILL | 2 - CUSTOMER | 3 - PROJECT | 4 - COMPANY | 5 - EXIT FROM SYSTEM");
+    ConsoleDataInput.writeMessage("\\nPlease Choose Entity: 1 - SKILL | 2 - CUSTOMER | 3 - COMPANY | 4 - COMPANY | 5 - EXIT FROM SYSTEM");
     controlValue = ConsoleDataInput.readInt();
     switch (controlValue) {
         case 1:
@@ -23,6 +24,9 @@ while (true) {
             generalController.execute();
         case 2:
             generalController = new CustomerController();
+            generalController.execute();
+        case 3:
+            generalController = new CompanyController();
             generalController.execute();
     }
 }
