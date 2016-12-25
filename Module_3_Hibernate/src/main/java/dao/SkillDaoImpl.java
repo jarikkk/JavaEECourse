@@ -30,12 +30,16 @@ try(Session session = sessionFactory.openSession()){
 
     @Override
     public void update(Skill skill) {
-
+        try(Session session = sessionFactory.openSession()){
+           session.createQuery("UPDATE SKILLS SET skill_name = :skillName").setParameter("skillName", skill.getSkillName());
+        }
     }
 
     @Override
     public void delete(int id) {
-
+        try(Session session = sessionFactory.openSession()){
+            session.createQuery("DELETE SKILLS WHERE skillId = :skillId").setParameter("skillId", id);
+        }
     }
 
     @Override
