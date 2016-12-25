@@ -1,10 +1,17 @@
 package entities;
 
-/**
- * Created by Vlad on 04.12.2016.
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "companies", schema = "public")
 public class Company {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "companie_id")
     private int companyID;
+
+    @Column(name = "companie_name")
     private String companyName;
 
 
