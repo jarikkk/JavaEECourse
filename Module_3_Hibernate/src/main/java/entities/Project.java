@@ -23,6 +23,8 @@ public class Project {
     @Column(name = "project_start_timestamp")
     private Date projectTimeStamp;
 
+    public Project() {
+    }
 
     public Project(String projectName) {
         this.projectName = projectName;

@@ -40,7 +40,7 @@ public class SkillController implements GeneralController {
             id = ConsoleDataInput.readInt();
             skillDAO.delete(id);
         } else if (controlValue == 3) {
-            ConsoleDataInput.writeMessage("INPUT ID & NAME OF DEVELOPER SKILL TO UPDATE");
+            ConsoleDataInput.writeMessage("INPUT NAME & ID OF DEVELOPER SKILL TO UPDATE");
             name = ConsoleDataInput.readString();
             id = ConsoleDataInput.readInt();
             skill1.setSkillId(id);
