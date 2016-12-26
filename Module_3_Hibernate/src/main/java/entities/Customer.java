@@ -16,6 +16,13 @@ public class Customer {
     public Customer() {
     }
 
+
+
+    public Customer(int customerId, String customerName) {
+        this.customerId = customerId;
+        this.customerName = customerName;
+    }
+
     public int getCustomerId() {
         return customerId;
     }

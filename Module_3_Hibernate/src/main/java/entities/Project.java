@@ -14,16 +14,24 @@ public class Project {
     @Column(name = "project_name")
     private String projectName;
 
-    @Column(name = "project_company_id")
+    @ManyToOne
+    @JoinColumn(name = "project_company_id")
     private Company projectCompanyId;
 
-    @Column(name = "project_customer_id")
+    @ManyToOne
+    @JoinColumn(name = "project_customer_id")
     private Customer projectCustomerId;
 
     @Column(name = "project_start_timestamp")
     private Date projectTimeStamp;
 
     public Project() {
+    }
+
+    public Project(int projectId, String projectName, Date projectTimeStamp) {
+        this.projectId = projectId;
+        this.projectName = projectName;
+        this.projectTimeStamp = projectTimeStamp;
     }
 
     public Project(String projectName) {
