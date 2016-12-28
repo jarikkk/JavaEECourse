@@ -1,7 +1,4 @@
-import controller.CompanyController;
-import controller.CustomerController;
-import controller.GeneralController;
-import controller.SkillController;
+import controller.*;
 import view.ConsoleDataInput;
 
 import java.io.IOException;
@@ -16,7 +13,7 @@ public class Run {
         ConsoleDataInput.writeMessage("Welcome to CRUD System-----------------------------------------------");
 
 while (true) {
-    ConsoleDataInput.writeMessage("\\nPlease Choose Entity: 1 - SKILL | 2 - CUSTOMER | 3 - COMPANY | 4 - COMPANY | 5 - EXIT FROM SYSTEM");
+    ConsoleDataInput.writeMessage("\\nPlease Choose Entity: 1 - SKILL | 2 - CUSTOMER | 3 - COMPANY | 4 - DEVELOPER | 5 - PROJECT | 6 - EXIT FROM SYSTEM");
     controlValue = ConsoleDataInput.readInt();
     switch (controlValue) {
         case 1:
@@ -28,6 +25,16 @@ while (true) {
         case 3:
             generalController = new CompanyController();
             generalController.execute();
+        case 4:
+            generalController = new DeveloperController();
+            generalController.execute();
+        case 5:
+            generalController = new ProjectController();
+            generalController.execute();
+        case 6:
+            System.out.println("EXIT FROM SYSTEM");
+
+
     }
 }
     }

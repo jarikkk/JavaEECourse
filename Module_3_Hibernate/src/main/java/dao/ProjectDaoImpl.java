@@ -1,7 +1,6 @@
 package dao;
 
 import entities.Project;
-import entities.Skill;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
