@@ -2,6 +2,7 @@ package entities;
 
 import javax.persistence.*;
 import java.util.Date;
+
 @Entity
 @Table(name = "projects", schema = "public")
 public class Project {
@@ -16,22 +17,16 @@ public class Project {
 
     @ManyToOne
     @JoinColumn(name = "project_company_id")
-    private Company projectCompanyId;
+    private Project project;
 
     @ManyToOne
     @JoinColumn(name = "project_customer_id")
-    private Customer projectCustomerId;
+    private Project projectCustomerId;
 
     @Column(name = "project_start_timestamp")
     private Date projectTimeStamp;
 
     public Project() {
-    }
-
-    public Project(int projectId, String projectName, Date projectTimeStamp) {
-        this.projectId = projectId;
-        this.projectName = projectName;
-        this.projectTimeStamp = projectTimeStamp;
     }
 
     public Project(String projectName) {
@@ -54,19 +49,19 @@ public class Project {
         this.projectName = projectName;
     }
 
-    public Company getProjectCompanyId() {
-        return projectCompanyId;
+    public Project getProjectCompanyId() {
+        return project;
     }
 
     public void setProjectCompanyId(Company projectCompanyId) {
-        this.projectCompanyId = projectCompanyId;
+        this.project = project;
     }
 
-    public Customer getProjectCustomerId() {
+    public Project getProjectCustomerId() {
         return projectCustomerId;
     }
 
-    public void setProjectCustomerId(Customer projectCustomerId) {
+    public void setProjectCustomerId(Project projectCustomerId) {
         this.projectCustomerId = projectCustomerId;
     }
 
@@ -83,7 +78,7 @@ public class Project {
         return "Project{" +
                 "projectId=" + projectId +
                 ", projectName='" + projectName + '\'' +
-                ", projectCompanyId=" + projectCompanyId +
+                ", projectCompanyId=" + project +
                 ", projectCustomerId=" + projectCustomerId +
                 ", projectTimeStamp=" + projectTimeStamp +
                 '}';

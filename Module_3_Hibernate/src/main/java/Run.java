@@ -13,7 +13,7 @@ public class Run {
         ConsoleDataInput.writeMessage("Welcome to CRUD System-----------------------------------------------");
 
 while (true) {
-    ConsoleDataInput.writeMessage("\\nPlease Choose Entity: 1 - SKILL | 2 - CUSTOMER | 3 - COMPANY | 4 - DEVELOPER | 5 - PROJECT | 6 - EXIT FROM SYSTEM");
+    ConsoleDataInput.writeMessage("Please Choose Entity: 1 - SKILL | 2 - CUSTOMER | 3 - COMPANY | 4 - DEVELOPER | 5 - PROJECT | 6 - EXIT FROM SYSTEM");
     controlValue = ConsoleDataInput.readInt();
     switch (controlValue) {
         case 1:

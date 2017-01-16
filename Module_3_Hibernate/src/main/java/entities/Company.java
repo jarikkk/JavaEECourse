@@ -1,6 +1,7 @@
 package entities;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "companies", schema = "public")
@@ -14,10 +15,19 @@ public class Company {
     @Column(name = "companie_name")
     private String companyName;
 
-
+    @OneToMany(mappedBy = "project")
+    private List<Company> project;
 
     public Company() {
 
+    }
+
+    public List<Company> getProject() {
+        return project;
+    }
+
+    public void setProject(List<Company> project) {
+        this.project = project;
     }
 
     public int getCompanyID() {

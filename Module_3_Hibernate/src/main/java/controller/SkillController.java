@@ -26,7 +26,7 @@ public class SkillController implements GeneralController {
 
 
         ConsoleDataInput.writeMessage("* * * DEVELOPERS SKILLS * * *" + "\n" +
-                "1 - CREATE | 2 - DELETE | 3 - UPDATE | 4 - SHOW ALL SKILLS | 5 - FIND BY NAME | 6 - GET BY ID\\n");
+                "1 - CREATE | 2 - DELETE | 3 - UPDATE | 4 - SHOW ALL SKILLS | 5 - FIND BY NAME | 6 - GET BY ID");
 
         controlValue = ConsoleDataInput.readInt();
 

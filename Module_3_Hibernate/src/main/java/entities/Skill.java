@@ -20,7 +20,7 @@ public class Skill {
             schema = "public",
             joinColumns = @JoinColumn(name = "developer_id"),
             inverseJoinColumns = @JoinColumn(name = "skill_id"))
-    private List<Developer> developerList;
+    private List<Skill> skillsList;
 
     public Skill() {
     }

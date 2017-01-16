@@ -1,7 +1,9 @@
 package entities;
 
 import javax.persistence.*;
+import java.util.List;
 
+@Entity
 @Table(name = "customers", schema = "public")
 public class Customer {
 
@@ -13,14 +15,18 @@ public class Customer {
     @Column(name = "customer_name")
     private String customerName;
 
+    @OneToMany(mappedBy = "project")
+    private List<Customer> customer;
+
     public Customer() {
     }
 
+    public List<Customer> getCustomer() {
+        return customer;
+    }
 
-
-    public Customer(int customerId, String customerName) {
-        this.customerId = customerId;
-        this.customerName = customerName;
+    public void setCustomer(List<Customer> customer) {
+        this.customer = customer;
     }
 
     public int getCustomerId() {
