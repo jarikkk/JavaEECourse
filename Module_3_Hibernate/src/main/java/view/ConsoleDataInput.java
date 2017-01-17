@@ -21,15 +21,14 @@ public class ConsoleDataInput {
     }
 
     public static Date readDate() throws IOException {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         String dateInString = bufferedReader.readLine();
         Date date = new Date();
 
         try {
 
             date = formatter.parse(dateInString);
-            System.out.println(date);
-            System.out.println(formatter.format(date));
+
 
         } catch (ParseException e) {
             e.printStackTrace();
@@ -38,9 +37,10 @@ public class ConsoleDataInput {
     }
 
     public static int readInt() throws IOException {
-        int number = 0;
+        int number = 1;
         try {
             number = Integer.parseInt(bufferedReader.readLine());
+            return number;
         }catch (NumberFormatException e){
             ConsoleDataInput.writeMessage("Incorrect data, repeat input");
             readInt();

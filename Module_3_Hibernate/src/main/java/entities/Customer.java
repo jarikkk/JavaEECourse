@@ -1,7 +1,8 @@
 package entities;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.ArrayList;
+
 
 @Entity
 @Table(name = "customers", schema = "public")
@@ -15,18 +16,18 @@ public class Customer {
     @Column(name = "customer_name")
     private String customerName;
 
-    @OneToMany(mappedBy = "project")
-    private List<Customer> customer;
+    @OneToMany(mappedBy = "customer")
+    private ArrayList<Project> projects = new ArrayList<>();
 
     public Customer() {
     }
 
-    public List<Customer> getCustomer() {
-        return customer;
+    public ArrayList<Project> getProjects() {
+        return projects;
     }
 
-    public void setCustomer(List<Customer> customer) {
-        this.customer = customer;
+    public void setProjects(ArrayList<Project> projects) {
+        this.projects = projects;
     }
 
     public int getCustomerId() {

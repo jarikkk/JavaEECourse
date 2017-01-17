@@ -1,11 +1,12 @@
 package entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "companies", schema = "public")
-public class Company {
+public class Company{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,19 +16,19 @@ public class Company {
     @Column(name = "companie_name")
     private String companyName;
 
-    @OneToMany(mappedBy = "project")
-    private List<Company> project;
+    @OneToMany(mappedBy = "company")
+    private ArrayList<Project> projects = new ArrayList<>();
 
     public Company() {
 
     }
 
-    public List<Company> getProject() {
-        return project;
-    }
+    public List<Project> getProject() {
+        return this.projects;}
 
-    public void setProject(List<Company> project) {
-        this.project = project;
+
+    public void setProject(ArrayList<Project> projects) {
+        this.projects = projects;
     }
 
     public int getCompanyID() {

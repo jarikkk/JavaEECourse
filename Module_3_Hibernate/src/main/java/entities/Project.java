@@ -17,11 +17,11 @@ public class Project {
 
     @ManyToOne
     @JoinColumn(name = "project_company_id")
-    private Project project;
+    private Company projectCompanyId;
 
     @ManyToOne
     @JoinColumn(name = "project_customer_id")
-    private Project projectCustomerId;
+    private Customer projectCustomerId;
 
     @Column(name = "project_start_timestamp")
     private Date projectTimeStamp;
@@ -49,19 +49,19 @@ public class Project {
         this.projectName = projectName;
     }
 
-    public Project getProjectCompanyId() {
-        return project;
+    public Company getProjectCompanyId() {
+        return projectCompanyId;
     }
 
     public void setProjectCompanyId(Company projectCompanyId) {
-        this.project = project;
+        this.projectCompanyId = projectCompanyId;
     }
 
-    public Project getProjectCustomerId() {
+    public Customer getProjectCustomerId() {
         return projectCustomerId;
     }
 
-    public void setProjectCustomerId(Project projectCustomerId) {
+    public void setProjectCustomerId(Customer projectCustomerId) {
         this.projectCustomerId = projectCustomerId;
     }
 
@@ -78,7 +78,7 @@ public class Project {
         return "Project{" +
                 "projectId=" + projectId +
                 ", projectName='" + projectName + '\'' +
-                ", projectCompanyId=" + project +
+                ", projectCompanyId=" + projectCompanyId +
                 ", projectCustomerId=" + projectCustomerId +
                 ", projectTimeStamp=" + projectTimeStamp +
                 '}';

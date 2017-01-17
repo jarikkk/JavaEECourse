@@ -46,13 +46,13 @@ public class DeveloperController implements GeneralController {
                 ConsoleDataInput.writeMessage("INPUT COMPANY ID OF PROJECT ");
                 id = ConsoleDataInput.readInt();
                 company.setCompanyID(id);
-                project.setProjectCompanyId(company);
+                project.getProjectCompanyId();
 
 
                 ConsoleDataInput.writeMessage("INPUT CUSTOMER ID OF PROJECT ");
                 id = ConsoleDataInput.readInt();
                 customer.setCustomerId(id);
-                project.setProjectCustomerId(project);
+                project.getProjectCustomerId();
 
                 ConsoleDataInput.writeMessage("INPUT DATE OF CREATION OF PROJECT");
                 date = ConsoleDataInput.readDate();
@@ -78,13 +78,13 @@ public class DeveloperController implements GeneralController {
                 ConsoleDataInput.writeMessage("INPUT COMPANY ID OF PROJECT ");
                 id = ConsoleDataInput.readInt();
                 company.setCompanyID(id);
-                project.setProjectCompanyId(company);
+                project.getProjectCompanyId();
 
 
                 ConsoleDataInput.writeMessage("INPUT CUSTOMER ID OF PROJECT ");
                 id = ConsoleDataInput.readInt();
                 customer.setCustomerId(id);
-                project.setProjectCustomerId(project);
+                project.getProjectCustomerId();
 
                 ConsoleDataInput.writeMessage("INPUT DATE OF CREATION OF PROJECT");
                 date = ConsoleDataInput.readDate();
