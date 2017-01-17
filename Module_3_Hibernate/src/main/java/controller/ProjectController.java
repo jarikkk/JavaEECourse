@@ -70,6 +70,7 @@ public class ProjectController implements GeneralController {
                 Customer customer = new Customer();
                 ConsoleDataInput.writeMessage("INPUT ID TO UPDATE PROJECT");
                 id = ConsoleDataInput.readInt();
+                project.setProjectId(id);
 
                 ConsoleDataInput.writeMessage("INPUT NAME OF PROJECT TO CREATE");
                 name = ConsoleDataInput.readString();

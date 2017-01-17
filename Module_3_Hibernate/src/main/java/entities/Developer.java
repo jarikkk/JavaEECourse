@@ -27,24 +27,12 @@ public class Developer {
     @Column(name = "developer_join_date")
     private Date developerJoinDate;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "developers_skills",
-            schema = "public",
-            joinColumns = @JoinColumn(name = "skill_id"),
-            inverseJoinColumns = @JoinColumn(name = "developer_id"))
-    private List<Skill> skillsList;
+
 
     public Developer() {
 
     }
 
-    public Developer(int developerId, String developerName, Company developerCompanyId, Project developerProjectId, Date developerJoinDate) {
-        this.developerId = developerId;
-        this.developerName = developerName;
-        this.developerCompanyId = developerCompanyId;
-        this.developerProjectId = developerProjectId;
-        this.developerJoinDate = developerJoinDate;
-    }
 
     public Developer(String developerName) {
         this.developerName = developerName;

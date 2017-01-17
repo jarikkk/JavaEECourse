@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "companies", schema = "public")
-public class Company{
+public class Company {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,8 +20,19 @@ public class Company{
     @OneToMany(mappedBy = "projectCompanyId")
     private Set<Project> projects;
 
+    @OneToMany(mappedBy = "developerCompanyId")
+    private Set<Developer> developers;
+
     public Company() {
 
+    }
+
+    public Set<Developer> getDevelopers() {
+        return developers;
+    }
+
+    public void setDevelopers(Set<Developer> developers) {
+        this.developers = developers;
     }
 
     public Set<Project> getProjects() {

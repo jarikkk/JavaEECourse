@@ -2,6 +2,7 @@ package entities;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "projects", schema = "public")
@@ -26,7 +27,18 @@ public class Project {
     @Column(name = "project_start_timestamp")
     private Date projectTimeStamp;
 
+    @OneToMany(mappedBy = "developerProjectId")
+    private Set<Developer> developers;
+
     public Project() {
+    }
+
+    public Set<Developer> getDevelopers() {
+        return developers;
+    }
+
+    public void setDevelopers(Set<Developer> developers) {
+        this.developers = developers;
     }
 
     public Project(String projectName) {
