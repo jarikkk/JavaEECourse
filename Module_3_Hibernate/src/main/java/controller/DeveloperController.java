@@ -2,8 +2,6 @@ package controller;
 
 import dao.DeveloperDao;
 import dao.DeveloperDaoImpl;
-import dao.ProjectDao;
-import dao.ProjectDaoImpl;
 import entities.Company;
 import entities.Customer;
 import entities.Developer;

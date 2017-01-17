@@ -15,12 +15,7 @@ public class Skill {
     @Column(name = "skill_name")
     private String skillName;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "developers_skills",
-            schema = "public",
-            joinColumns = @JoinColumn(name = "developer_id"),
-            inverseJoinColumns = @JoinColumn(name = "skill_id"))
-    private List<Skill> skillsList;
+
 
     public Skill() {
     }
