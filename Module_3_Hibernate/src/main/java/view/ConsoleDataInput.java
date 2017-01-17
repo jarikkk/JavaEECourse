@@ -40,7 +40,7 @@ public class ConsoleDataInput {
         int number = 1;
         try {
             number = Integer.parseInt(bufferedReader.readLine());
-            return number;
+
         }catch (NumberFormatException e){
             ConsoleDataInput.writeMessage("Incorrect data, repeat input");
             readInt();

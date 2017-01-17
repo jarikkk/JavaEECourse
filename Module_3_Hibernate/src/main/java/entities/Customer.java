@@ -2,6 +2,7 @@ package entities;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Set;
 
 
 @Entity
@@ -16,17 +17,17 @@ public class Customer {
     @Column(name = "customer_name")
     private String customerName;
 
-    @OneToMany(mappedBy = "customer")
-    private ArrayList<Project> projects = new ArrayList<>();
+    @OneToMany(mappedBy = "projectCustomerId")
+    private Set<Project> projects;
 
     public Customer() {
     }
 
-    public ArrayList<Project> getProjects() {
+    public Set<Project> getProjects() {
         return projects;
     }
 
-    public void setProjects(ArrayList<Project> projects) {
+    public void setProjects(Set<Project> projects) {
         this.projects = projects;
     }
 
