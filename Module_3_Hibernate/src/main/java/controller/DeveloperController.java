@@ -31,8 +31,8 @@ public class DeveloperController implements GeneralController {
                 .configure("hibernate.cfg.xml");
         try (SessionFactory sessionFactory = configuration.buildSessionFactory()) {
             DeveloperDao developerDao = new DeveloperDaoImpl(sessionFactory);
-            ConsoleDataInput.writeMessage("* * * PROJECT * * *" + "\n" +
-                    "1 - CREATE | 2 - DELETE | 3 - UPDATE | 4 - SHOW ALL SKILLS | 5 - FIND BY NAME | 6 - GET BY ID " + "\n");
+            ConsoleDataInput.writeMessage("* * * DEVELOPER * * *" + "\n" +
+                    "1 - CREATE | 2 - DELETE | 3 - UPDATE | 4 - SHOW ALL DEVELOPERS | 5 - FIND BY NAME | 6 - GET BY ID " + "\n");
 
             controlValue = ConsoleDataInput.readInt();
 
@@ -94,7 +94,7 @@ public class DeveloperController implements GeneralController {
                 developerDao.update(developer);
 
             } else if (controlValue == 4) {
-                developerDao.getAll();
+                System.out.println(developerDao.getAll());
 
             } else if (controlValue == 5) {
                 ConsoleDataInput.writeMessage("INPUT NAME OF DEVELOPER TO FIND");

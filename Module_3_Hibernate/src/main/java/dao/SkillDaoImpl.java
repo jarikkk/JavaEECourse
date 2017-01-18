@@ -69,8 +69,9 @@ public class SkillDaoImpl implements SkillDao<Skill> {
 
     @Override
     public List<Skill> getAll() {
+
         try(Session session = sessionFactory.openSession()){
-            return session.createQuery("from Skill", Skill.class).list();
+            return session.createQuery("select skillName from Skill").list() ;
         }
     }
 }

@@ -27,5 +27,7 @@
         <mapping class="entities.Company" />
         <mapping class="entities.Customer" />
         <mapping class="entities.Project" />
+        <mapping class="entities.Skill" />
+        <mapping class="entities.Developer" />
     </session-factory>
 </hibernate-configuration>

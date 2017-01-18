@@ -3,6 +3,8 @@ package entities;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.ServiceConfigurationError;
+import java.util.Set;
 
 @Entity
 @Table(name = "developers", schema = "public")
@@ -24,29 +26,27 @@ public class Developer {
     @JoinColumn(name = "developer_project_id")
     private Project developerProjectId;
 
+    @ManyToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "developers")
+    private List<Skill> skills;
+
     @Column(name = "developer_join_date")
     private Date developerJoinDate;
-
 
 
     public Developer() {
 
     }
 
+    public List<Skill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<Skill> skills) {
+        this.skills = skills;
+    }
 
     public Developer(String developerName) {
         this.developerName = developerName;
-    }
-
-    @Override
-    public String toString() {
-        return "Developer{" +
-                "developerId=" + developerId +
-                ", developerName='" + developerName + '\'' +
-                ", developerCompanyId=" + developerCompanyId +
-                ", developerProjectId=" + developerProjectId +
-                ", developerJoinDate=" + developerJoinDate +
-                '}';
     }
 
     public int getDeveloperId() {
@@ -89,5 +89,15 @@ public class Developer {
         this.developerJoinDate = developerJoinDate;
     }
 
-
+    @Override
+    public String toString() {
+        return "Developer{" +
+                "developerId=" + developerId +
+                ", developerName='" + developerName + '\'' +
+                ", developerCompanyId=" + developerCompanyId +
+                ", developerProjectId=" + developerProjectId +
+                ", skills=" + skills +
+                ", developerJoinDate=" + developerJoinDate +
+                '}';
+    }
 }

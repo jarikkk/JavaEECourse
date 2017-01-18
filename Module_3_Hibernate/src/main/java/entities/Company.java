@@ -64,6 +64,8 @@ public class Company {
         return "Company{" +
                 "companyID=" + companyID +
                 ", companyName='" + companyName + '\'' +
+                ", projects=" + projects +
+                ", developers=" + developers +
                 '}';
     }
 }

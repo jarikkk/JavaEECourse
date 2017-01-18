@@ -93,6 +93,7 @@ public class Project {
                 ", projectCompanyId=" + projectCompanyId +
                 ", projectCustomerId=" + projectCustomerId +
                 ", projectTimeStamp=" + projectTimeStamp +
+                ", developers=" + developers +
                 '}';
     }
 }
