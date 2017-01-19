@@ -68,7 +68,7 @@ public class DeveloperController implements GeneralController {
             } else if (controlValue == 3) {
                 Company company = new Company();
                 Project project = new Project();
-                ConsoleDataInput.writeMessage("INPUT ID TO UPDATE PROJECT");
+                ConsoleDataInput.writeMessage("INPUT ID TO UPDATE DEVELOPER");
                 id = ConsoleDataInput.readInt();
                 developer.setDeveloperId(id);
 

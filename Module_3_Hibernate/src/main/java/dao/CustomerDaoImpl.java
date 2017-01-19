@@ -71,7 +71,7 @@ public class CustomerDaoImpl implements CustomerDao<Customer> {
     @Override
     public List<Customer> getAll() {
         try(Session session = sessionFactory.openSession()){
-            return session.createQuery("from Customer", Customer.class).list();
+            return session.createQuery("select customerId, customerName from Customer").list();
         }
     }
 }

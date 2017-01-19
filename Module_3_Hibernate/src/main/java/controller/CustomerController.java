@@ -26,7 +26,7 @@ public class CustomerController implements GeneralController {
 
 
             ConsoleDataInput.writeMessage("* * * CUSTOMERS * * *" + "\n" +
-                    "1 - CREATE | 2 - DELETE | 3 - UPDATE | 4 - SHOW ALL SKILLS | 5 - FIND BY NAME | 6 - GET BY ID");
+                    "1 - CREATE | 2 - DELETE | 3 - UPDATE | 4 - SHOW ALL CUSTOMERS | 5 - FIND BY NAME | 6 - GET BY ID");
 
             controlValue = ConsoleDataInput.readInt();
 

@@ -63,7 +63,7 @@ public class SkillDaoImpl implements SkillDao<Skill> {
     public String findByName(String name) {
 
         try (Session session = sessionFactory.openSession()) {
-            return session.createQuery("from Skill where name = :name").setParameter("name", name).toString();
+            return session.createQuery("select skillName from Skill where name = :name").setParameter("name", name).toString();
         }
     }
 
@@ -71,7 +71,7 @@ public class SkillDaoImpl implements SkillDao<Skill> {
     public List<Skill> getAll() {
 
         try(Session session = sessionFactory.openSession()){
-            return session.createQuery("select skillName from Skill").list() ;
+            return session.createQuery("select skillId, skillName from Skill").list() ;
         }
     }
 }

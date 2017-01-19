@@ -70,7 +70,7 @@ public class DeveloperDaoImpl implements DeveloperDao<Developer> {
     @Override
     public List<Developer> getAll() {
         try(Session session = sessionFactory.openSession()){
-            return session.createQuery("from Developer", Developer.class).list();
+            return session.createQuery("select developerId, developerName, developerCompanyId, developerJoinDate from Developer join Company where developerCompanyId = companyId").list();
         }
     }
 }

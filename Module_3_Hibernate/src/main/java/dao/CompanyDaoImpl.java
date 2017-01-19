@@ -69,7 +69,7 @@ public class CompanyDaoImpl implements CompanyDao<Company> {
     @Override
     public List<Company> getAll() {
         try(Session session = sessionFactory.openSession()){
-            return session.createQuery("from Company", Company.class).list();
+            return session.createQuery("select companyID, companyName from Company").list();
         }
     }
 }

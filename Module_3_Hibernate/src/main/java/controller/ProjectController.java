@@ -90,6 +90,7 @@ public class ProjectController implements GeneralController {
                 ConsoleDataInput.writeMessage("INPUT DATE OF CREATION OF PROJECT");
                 date = ConsoleDataInput.readDate();
                 project.setProjectTimeStamp(date);
+
                 projectDao.update(project);
 
             } else if (controlValue == 4) {
