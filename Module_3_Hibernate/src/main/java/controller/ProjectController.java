@@ -33,7 +33,7 @@ public class ProjectController implements GeneralController {
             ProjectDao projectDao = new ProjectDaoImpl(sessionFactory);
 
             ConsoleDataInput.writeMessage("* * * PROJECT * * *" + "\n" +
-                    "1 - CREATE | 2 - DELETE | 3 - UPDATE | 4 - SHOW ALL SKILLS | 5 - FIND BY NAME | 6 - GET BY ID " + "\n");
+                    "1 - CREATE | 2 - DELETE | 3 - UPDATE | 4 - SHOW ALL PROJECTS | 5 - FIND BY NAME | 6 - GET BY ID " + "\n");
 
             controlValue = ConsoleDataInput.readInt();
 
@@ -94,7 +94,7 @@ public class ProjectController implements GeneralController {
                 projectDao.update(project);
 
             } else if (controlValue == 4) {
-                projectDao.getAll();
+                System.out.println(projectDao.getAll().toString());
 
             } else if (controlValue == 5) {
                 ConsoleDataInput.writeMessage("INPUT NAME OF PROJECT TO CREATE");

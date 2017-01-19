@@ -70,7 +70,7 @@ public class ProjectDaoImpl implements ProjectDao<Project> {
     @Override
     public List<Project> getAll() {
         try(Session session = sessionFactory.openSession()){
-            return session.createQuery("select from Project", Project.class).list();
+            return session.createQuery("select projectId, projectName, projectTimeStamp from Project").list();
         }
     }
 }
